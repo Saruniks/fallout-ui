@@ -14,6 +14,7 @@ phases:
 artifacts:
   files:
     - '**/*'
+  base-directory: 'demo-app/dist'
 
 cache:
   paths:
