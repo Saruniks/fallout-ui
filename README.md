@@ -19,7 +19,9 @@ Features:
   - Vertical data list
 - Few utility hooks
 
-![gif](./fallout_ui_demo.gif)
+## Storybook
+
+https://d2b5h5e27mrwx0.cloudfront.net
 
 ## Running this project
 
@@ -40,14 +42,3 @@ Serve the app:
 ```
 trunk serve
 ```
-
-## History
-
-This is a part of a bigger project I've been running in production for quite a while now.
-But I've always felt guilty to keep this component library part of the project in the dark.
-So I've given it some effort and decoupled it, to open source and give back to the community.
-
-## Contributing
-
-Unfortunately I have neither will or time to maintain a component library.
-So copy, reference and fork away, but no issues or pull requests will be addressed.
