@@ -6,7 +6,7 @@ env:
 phases:
   build:
     commands:
-      - cd E:\open-source\fallout-ui\demo-app
+      - cd demo-app
       - export TRUNK_BUILD_RELEASE=true
       - cd trunk build
       - apt-get install zip unzip -y
