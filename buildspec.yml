@@ -1,0 +1,25 @@
+version: "0.2"
+
+env:
+  shell: bash
+
+phases:
+  build:
+    commands:
+      - cd E:\open-source\fallout-ui\demo-app
+      - export TRUNK_BUILD_RELEASE=true
+      - cd trunk build
+      - apt-get install zip unzip -y
+      - cd dist
+      - mkdir /asset-output
+      - zip /asset-output/frontend-code.zip . -r
+
+artifacts:
+  files:
+    - 'frontend-code.zip'
+  base-directory: '/asset-output'
+
+cache:
+  paths:
+    - $HOME/.cargo/registry/**/*
+    
