@@ -8,7 +8,7 @@ phases:
     commands:
       - cd demo-app
       - export TRUNK_BUILD_RELEASE=true
-      - cd trunk build
+      - trunk build
       - apt-get install zip unzip -y
       - cd dist
       - mkdir /asset-output
