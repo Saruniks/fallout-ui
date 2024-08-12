@@ -21,7 +21,7 @@ Features:
 
 ## Storybook
 
-https://d2b5h5e27mrwx0.cloudfront.net
+https://d1zhqm37fazhul.cloudfront.net
 
 ## Running this project
 
