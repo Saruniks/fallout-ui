@@ -21,7 +21,7 @@ Features:
 
 ## Storybook
 
-https://d1zhqm37fazhul.cloudfront.net
+https://fallout-ui.link
 
 ## Running this project
 
