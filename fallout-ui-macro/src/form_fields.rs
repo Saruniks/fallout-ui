@@ -166,10 +166,10 @@ pub fn form_fields_impl(input: DeriveInput) -> Result<proc_macro2::TokenStream> 
                 SetErrors(std::collections::HashMap<#Field, String>),
                 Touch(#Field),
                 TouchAll,
-                Reset(crate::utils::form_schema_handle::FormSchemaHandle<#FormSchema, #Field>),
+                Reset(FormSchemaHandle<#FormSchema, #Field>),
             }
 
-            impl yew::prelude::Reducible for crate::utils::form_schema_handle::FormSchemaHandle<#FormSchema, #Field> {
+            impl yew::prelude::Reducible for FormSchemaHandle<#FormSchema, #Field> {
                 type Action = #Action;
 
                 fn reduce(self: std::rc::Rc<Self>, action: Self::Action) -> std::rc::Rc<Self> {

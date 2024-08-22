@@ -42,9 +42,9 @@ pub fn hooks_quote(
 
     Ok(quote! {
         #[hook]
-        pub fn #use_form_schema<F>(default_value: F) -> (UseReducerHandle<crate::utils::form_schema_handle::FormSchemaHandle<#FormSchema, #Field>>, #FieldsControlProps)
+        pub fn #use_form_schema<F>(default_value: F) -> (UseReducerHandle<FormSchemaHandle<#FormSchema, #Field>>, #FieldsControlProps)
         where
-            F: FnOnce() -> crate::utils::form_schema_handle::FormSchemaHandle<#FormSchema, #Field>,
+            F: FnOnce() -> FormSchemaHandle<#FormSchema, #Field>,
         {
             use std::collections::HashMap;
             use fallout_ui::utils::form::FieldControlProps;
