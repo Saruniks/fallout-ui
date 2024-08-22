@@ -10,7 +10,6 @@ use crate::components::form::text_input::TextInput;
 use crate::components::stories::Stories;
 use crate::components::story::Story;
 use crate::components::story::StoryBackground;
-use crate::utils::form_schema_handle::FormSchemaHandle;
 use crate::utils::toasts::notify_success;
 use crate::{self as fallout_ui};
 use fallout_ui_macro::FormFields;
