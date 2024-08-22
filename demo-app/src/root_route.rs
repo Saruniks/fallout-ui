@@ -75,6 +75,9 @@ pub enum Route {
     #[at("/accordion_table")]
     AccordionTable,
 
+    #[at("/code")]
+    CodeBlock,
+
     #[at("/multiple_words_input")]
     MultipleWordsInput,
 
@@ -124,7 +127,7 @@ impl Route {
             | MultipleWordsInput
             | BaseTextArea
             | BaseCodeArea => Forms,
-            VerticalDataList | Table | AccordionTable => DataDisplay,
+            VerticalDataList | Table | AccordionTable | CodeBlock => DataDisplay,
             _ => NotGrouped,
         }
     }

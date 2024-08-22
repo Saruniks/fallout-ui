@@ -9,6 +9,7 @@ pub mod base_multi_select_story;
 pub mod base_text_area_story;
 pub mod button_story;
 pub mod callout_story;
+pub mod code_block_story;
 pub mod divider_story;
 pub mod expandable_list_story;
 pub mod form_fields_macro_story;

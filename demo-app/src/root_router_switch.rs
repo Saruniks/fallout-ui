@@ -12,6 +12,7 @@ use fallout_ui::stories::base_multi_select_story::BaseMultiSelectStory;
 use fallout_ui::stories::base_text_area_story::BaseTextAreaStory;
 use fallout_ui::stories::button_story::ButtonStory;
 use fallout_ui::stories::callout_story::CalloutStory;
+use fallout_ui::stories::code_block_story::CodeBlockStory;
 use fallout_ui::stories::divider_story::DividerStory;
 use fallout_ui::stories::expandable_list_story::ExpandableListStory;
 use fallout_ui::stories::form_fields_macro_story::FormFieldsMacroStory;
@@ -57,6 +58,7 @@ pub fn RouterSwitch() -> Html {
         VerticalDataList => html! { <VerticalDataListStory /> },
         Table => html! {<TableStory />},
         AccordionTable => html! {<AccordionTableStory />},
+        CodeBlock => html! {<CodeBlockStory />},
         Toasts => html! {<ToastsStory />},
     };
 

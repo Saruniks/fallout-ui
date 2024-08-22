@@ -23,7 +23,7 @@ serde = { workspace = true, features = ["derive"] }
 serde_json = { workspace = true }
 serde_qs = { workspace = true }
 strum = { workspace = true, features = ["derive"] }
-uuid = { workspace = true, features = ["wasm-bindgen"] }
+uuid = { workspace = true, features = ["wasm-bindgen", "v4"] }
 velcro = { workspace = true }
 validator = { workspace = true, features = ["derive", "phone"] }
 wasm-bindgen = { workspace = true, features = ["std"] }
