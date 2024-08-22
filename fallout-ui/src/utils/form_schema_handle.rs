@@ -85,7 +85,7 @@ macro_rules! form_schema_handle_shared_code {
     };
 }
 
-mod inner {
+pub mod inner {
     form_schema_handle_shared_code!();
 }
-pub(crate) use inner::*;
+pub use inner::*;
