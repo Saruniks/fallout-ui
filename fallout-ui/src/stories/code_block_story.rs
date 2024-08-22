@@ -1,22 +1,20 @@
 use clone_on_capture::clone_on_capture;
 use yew::prelude::*;
 
+use crate::components::callouts::callout_info::CalloutInfo;
 use crate::components::code_block::CodeBlock;
 use crate::components::stories::Stories;
 use crate::components::story::Story;
 use crate::components::story::StoryBackground;
-use crate::components::typography::body_text::BodyText;
-use crate::components::typography::header::Header;
 
 #[clone_on_capture]
 #[function_component]
 pub fn CodeBlockStory() -> Html {
     html! {
         <>
-            <Header class="my-2">{"Prerequisites"}</Header>
-            <BodyText class="mb-2">
-                {"Highlight.js must be added to support CodeBlocks"}
-            </BodyText>
+            <CalloutInfo class="mb-4">
+                {"Highlight.js must be added to support CodeBlock"}
+            </CalloutInfo>
             <Stories>
                 <Story name={"Rust"} background={StoryBackground::Light}>
                     <CodeBlock language={"rust"}> {
