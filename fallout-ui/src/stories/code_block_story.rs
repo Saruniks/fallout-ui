@@ -18,20 +18,20 @@ pub fn CodeBlockStory() -> Html {
             <Stories>
                 <Story name={"Rust"} background={StoryBackground::Light}>
                     <CodeBlock language={"rust"}> {
-    r###"#[tokio::main]
-    async fn main() {
-        // This is running on a core thread.
+r###"#[tokio::main]
+async fn main() {
+    // This is running on a core thread.
 
-        let blocking_task = tokio::task::spawn_blocking(|| {
-            // This is running on a blocking thread.
-            // Blocking here is ok.
-        });
+    let blocking_task = tokio::task::spawn_blocking(|| {
+        // This is running on a blocking thread.
+        // Blocking here is ok.
+    });
 
-        // We can wait for the blocking task like this:
-        // If the blocking task panics, the unwrap below will propagate the
-        // panic.
-        blocking_task.await.unwrap();
-    }"### }
+    // We can wait for the blocking task like this:
+    // If the blocking task panics, the unwrap below will propagate the
+    // panic.
+    blocking_task.await.unwrap();
+}"### }
                     </CodeBlock>
                 </Story>
                 <Story name={"TypeScript"} background={StoryBackground::Light}>
