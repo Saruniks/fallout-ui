@@ -23,6 +23,10 @@ Features:
 
 https://fallout-ui.link
 
+## Pre-built CSS
+
+https://fallout-ui-styles.s3.eu-north-1.amazonaws.com/fallout-ui-styles.css
+
 ## Running this project
 
 Install trunk:
