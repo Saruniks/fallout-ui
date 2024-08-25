@@ -3,10 +3,9 @@ use yew::prelude::*;
 #[derive(Clone, PartialEq, Properties)]
 pub struct Props {
     pub children: Children,
+    pub image: String,
     #[prop_or_default]
     pub class: Classes,
-    #[prop_or_default]
-    pub image: String,
     #[prop_or_default]
     pub hoverable: Option<bool>,
     #[prop_or_default]
@@ -31,8 +30,8 @@ pub fn Card(props: &Props) -> Html {
 
     html! {
         <div {onclick} class={classes!("max-w-sm", "rounded", "overflow-hidden", "border", "border-slate-300", "bg-white", class)}>
-            <img class="w-full" src={image} alt={"image"} />
-            <div class="px-4 py-4">
+            <img class="w-full bg-gray-200" src={image} alt={"image"} />
+            <div class="border-t border-slate-300 px-4 py-4">
                 {children}
             </div>
         </div>
