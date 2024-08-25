@@ -12,6 +12,7 @@ use fallout_ui::stories::base_multi_select_story::BaseMultiSelectStory;
 use fallout_ui::stories::base_text_area_story::BaseTextAreaStory;
 use fallout_ui::stories::button_story::ButtonStory;
 use fallout_ui::stories::callout_story::CalloutStory;
+use fallout_ui::stories::card_story::CardStory;
 use fallout_ui::stories::code_block_story::CodeBlockStory;
 use fallout_ui::stories::divider_story::DividerStory;
 use fallout_ui::stories::expandable_list_story::ExpandableListStory;
@@ -60,6 +61,7 @@ pub fn RouterSwitch() -> Html {
         AccordionTable => html! {<AccordionTableStory />},
         CodeBlock => html! {<CodeBlockStory />},
         Toasts => html! {<ToastsStory />},
+        Card => html! {<CardStory />},
     };
 
     html! {<StoryPage key={route.to_string()}>{story}</StoryPage>}

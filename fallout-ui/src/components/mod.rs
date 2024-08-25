@@ -2,6 +2,7 @@ pub mod breadcrumb_placeholder;
 pub mod breadcrumbs_divider;
 pub mod buttons;
 pub mod callouts;
+pub mod card;
 pub mod code_block;
 pub mod custom_checkbox;
 pub mod data_list;

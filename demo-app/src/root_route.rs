@@ -83,6 +83,9 @@ pub enum Route {
 
     #[at("/toasts")]
     Toasts,
+
+    #[at("/card")]
+    Card,
 }
 
 impl ImplicitClone for Route {}
@@ -127,7 +130,7 @@ impl Route {
             | MultipleWordsInput
             | BaseTextArea
             | BaseCodeArea => Forms,
-            VerticalDataList | Table | AccordionTable | CodeBlock => DataDisplay,
+            VerticalDataList | Table | AccordionTable | CodeBlock | Card => DataDisplay,
             _ => NotGrouped,
         }
     }
