@@ -86,6 +86,9 @@ pub enum Route {
 
     #[at("/card")]
     Card,
+
+    #[at("/grid")]
+    Grid,
 }
 
 impl ImplicitClone for Route {}
@@ -96,6 +99,7 @@ pub enum StoryGroup {
     CTA,
     DataDisplay,
     Forms,
+    Layout,
 }
 
 impl std::fmt::Display for StoryGroup {
@@ -107,6 +111,7 @@ impl std::fmt::Display for StoryGroup {
             CTA => write!(f, "CTA (Call To Action)"),
             Forms => write!(f, "Forms & User Input"),
             DataDisplay => write!(f, "Data Display"),
+            Layout => write!(f, "Layout"),
         }
     }
 }
@@ -131,6 +136,7 @@ impl Route {
             | BaseTextArea
             | BaseCodeArea => Forms,
             VerticalDataList | Table | AccordionTable | CodeBlock | Card => DataDisplay,
+            Grid => Layout,
             _ => NotGrouped,
         }
     }

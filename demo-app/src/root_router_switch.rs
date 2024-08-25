@@ -19,6 +19,7 @@ use fallout_ui::stories::expandable_list_story::ExpandableListStory;
 use fallout_ui::stories::form_fields_macro_story::FormFieldsMacroStory;
 use fallout_ui::stories::form_story::FormStory;
 use fallout_ui::stories::forms_and_inputs_mental_model_story::FormsAndInputsMentalModelStory;
+use fallout_ui::stories::grid_story::GridStory;
 use fallout_ui::stories::link_story::LinkStory;
 use fallout_ui::stories::modal_story::ModalStory;
 use fallout_ui::stories::multiple_words_input_story::MultipleWordsInputStory;
@@ -62,6 +63,7 @@ pub fn RouterSwitch() -> Html {
         CodeBlock => html! {<CodeBlockStory />},
         Toasts => html! {<ToastsStory />},
         Card => html! {<CardStory />},
+        Grid => html! {<GridStory />},
     };
 
     html! {<StoryPage key={route.to_string()}>{story}</StoryPage>}

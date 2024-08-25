@@ -23,3 +23,4 @@ pub mod toasts_story;
 pub mod typography_story;
 pub mod vertical_data_list_story;
 pub mod card_story;
+pub mod grid_story;

@@ -9,6 +9,7 @@ pub mod data_list;
 pub mod divider;
 pub mod expandable;
 pub mod form;
+pub mod layout;
 pub mod link;
 pub mod modal;
 pub mod not_found_404;
