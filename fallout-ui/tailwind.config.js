@@ -9,34 +9,34 @@ module.exports = {
     "../fallout-ui/src/**/*.css",
   ],
   theme: {
-    colors: {
-      black: "#231f20",
-      white: "#ffffff",
-      transparent: "transparent",
-
-      primary: "#2C41FF",
-      secondary: "#514263",
-      thirdly: "#D8DECB",
-      danger: "#EA1D25",
-      success: "#29A36E",
-
-      "reacting-primary": "#0014C7",
-      "reacting-secondary": "#1E1825",
-      "reacting-danger": "#950E13",
-      "reacting-success": "#145237",
-
-      "paper-primary": "#D6DAFF",
-      "paper-secondary": "#EAE7EF",
-      "paper-danger": "#FCDADB",
-      "paper-success": "#DEF7EC",
-
-      "washed-out-primary": "#808CFF",
-      "washed-out-secondary": "#BEB2CC",
-      "washed-out-thirdly": "#C5CDB1",
-      "washed-out-danger": "#F48A8E",
-      "washed-out-success": "#99E6C4",
-    },
     extend: {
+      colors: {
+        black: "#231f20",
+        white: "#ffffff",
+        transparent: "transparent",
+
+        primary: "#2C41FF",
+        secondary: "#514263",
+        thirdly: "#D8DECB",
+        danger: "#EA1D25",
+        success: "#29A36E",
+
+        "reacting-primary": "#0014C7",
+        "reacting-secondary": "#1E1825",
+        "reacting-danger": "#950E13",
+        "reacting-success": "#145237",
+
+        "paper-primary": "#D6DAFF",
+        "paper-secondary": "#EAE7EF",
+        "paper-danger": "#FCDADB",
+        
+        "paper-success": "#DEF7EC",
+        "washed-out-primary": "#808CFF",
+        "washed-out-secondary": "#BEB2CC",
+        "washed-out-thirdly": "#C5CDB1",
+        "washed-out-danger": "#F48A8E",
+        "washed-out-success": "#99E6C4",
+      },
       borderWidth: {
         1: "1px",
       },
