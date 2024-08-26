@@ -34,6 +34,18 @@ body,
   background-position: 0 0, 0 0, -15px -15px, 15px 15px;
 }
 
+.demo-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14rem;
+  height: 40px;
+  background-color: #35414e;
+  border-radius: 8px;
+  margin: 12px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 //For file input
 .custom-horizontal-scrollbar {
   overflow-x: scroll;

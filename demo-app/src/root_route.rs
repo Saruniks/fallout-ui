@@ -89,6 +89,9 @@ pub enum Route {
 
     #[at("/grid")]
     Grid,
+
+    #[at("/layout")]
+    Layout,
 }
 
 impl ImplicitClone for Route {}
@@ -118,26 +121,27 @@ impl std::fmt::Display for StoryGroup {
 
 impl Route {
     pub fn group(&self) -> StoryGroup {
-        use Route::*;
-        use StoryGroup::*;
-
         match self {
-            Link | Button => CTA,
-            FormsAndInputsMentalModel
-            | Form
-            | FormFieldsMacro
-            | BaseInput
-            | BaseFilterableNullableSelect
-            | BaseMultiSelect
-            | BaseFileInput
-            | BaseCheckbox
-            | BaseCheckboxSet
-            | MultipleWordsInput
-            | BaseTextArea
-            | BaseCodeArea => Forms,
-            VerticalDataList | Table | AccordionTable | CodeBlock | Card => DataDisplay,
-            Grid => Layout,
-            _ => NotGrouped,
+            Route::Link | Route::Button => StoryGroup::CTA,
+            Route::FormsAndInputsMentalModel
+            | Route::Form
+            | Route::FormFieldsMacro
+            | Route::BaseInput
+            | Route::BaseFilterableNullableSelect
+            | Route::BaseMultiSelect
+            | Route::BaseFileInput
+            | Route::BaseCheckbox
+            | Route::BaseCheckboxSet
+            | Route::MultipleWordsInput
+            | Route::BaseTextArea
+            | Route::BaseCodeArea => StoryGroup::Forms,
+            Route::VerticalDataList
+            | Route::Table
+            | Route::CodeBlock
+            | Route::AccordionTable
+            | Route::Card => StoryGroup::DataDisplay,
+            Route::Grid | Route::Layout => StoryGroup::Layout,
+            _ => StoryGroup::NotGrouped,
         }
     }
 }
