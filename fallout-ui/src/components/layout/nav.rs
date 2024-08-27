@@ -11,7 +11,7 @@ pub struct NavProps {
 #[function_component(Nav)]
 pub fn nav(props: &NavProps) -> Html {
     html! {
-        <div class={classes!("text-center", "items-center", "px-4", "bg-gray-800", "text-white", "shadow-inner", props.class.clone())}>
+        <div class={classes!("text-center", "items-center", "p-4", "bg-gray-800", "text-white", "shadow-inner", props.class.clone())}>
             { props.children.clone() }
         </div>
     }

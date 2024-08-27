@@ -30,6 +30,13 @@ pub fn Menu<T: Routable + 'static>(props: &MenuProps<T>) -> Html {
 
     let selected_item = use_state(|| props.default_selected);
 
+    {
+        let selected_item = selected_item.clone();
+        use_effect_with(props.default_selected, move |new_default| {
+            selected_item.set(*new_default);
+        });
+    }
+
     let items = props.items.iter().enumerate().map(|(index, item)| {
         let is_selected = *selected_item == index;
         let class_name = if is_selected {
