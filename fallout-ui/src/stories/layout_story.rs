@@ -78,7 +78,7 @@ pub fn LayoutStory() -> Html {
                         <div class="demo-logo"/>
                         <Menu<DummyRoute> mode={MenuMode::Horizontal} {items} default_selected={0}/>
                     </Nav>
-                        <div class="flex-1 pb-12 pt-6 px-12 space-y-6">
+                        <div class="flex-1 pb-10 pt-6 px-12 space-y-6">
                             { breadcrumbs.clone() }
                             <div class={"bg-white p-6 rounded-lg shadow-md"}>
                             <Content>
@@ -92,10 +92,10 @@ pub fn LayoutStory() -> Html {
                 </Layout>
             </Story>
 
-            <Story name={"Sider-Content-Footer"} background={StoryBackground::Light}>
+            <Story name={"Sider-Content-EmptyFooter-EmptyNav"} background={StoryBackground::Light}>
                 <Layout no_min_height={true} {sider} class={"border"}>
                     <Nav class={"bg-white p-4"}/>
-                    <div class="flex-1 pb-12 pt-6 px-12 space-y-6">
+                    <div class="flex-1 pb-10 pt-4 px-12 space-y-4">
                         { breadcrumbs }
                         <div class={"bg-white p-6 rounded-lg shadow-md"}>
                             <Content>
