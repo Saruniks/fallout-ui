@@ -1,18 +1,20 @@
+use clone_on_capture::clone_on_capture;
 use yew::prelude::*;
+use yew_router::{hooks::use_navigator, navigator, Routable};
 
 #[derive(Properties, PartialEq)]
-pub struct MenuProps {
+pub struct MenuProps<T: Routable + 'static> {
     #[prop_or_default]
     pub class: Classes,
-    pub items: Vec<MenuItem>,
+    pub items: Vec<MenuItem<T>>,
     pub default_selected: usize,
     pub mode: MenuMode,
 }
 
 #[derive(Clone, PartialEq)]
-pub struct MenuItem {
+pub struct MenuItem<T: Routable + 'static> {
     pub label: &'static str,
-    pub route: Route,
+    pub route: T,
 }
 
 #[derive(PartialEq)]
@@ -21,8 +23,11 @@ pub enum MenuMode {
     Horizontal,
 }
 
+#[clone_on_capture]
 #[function_component]
-pub fn Menu(props: &MenuProps) -> Html {
+pub fn Menu<T: Routable + 'static>(props: &MenuProps<T>) -> Html {
+    let navigator = use_navigator().unwrap();
+
     let selected_item = use_state(|| props.default_selected);
 
     let items = props.items.iter().enumerate().map(|(index, item)| {
@@ -35,11 +40,15 @@ pub fn Menu(props: &MenuProps) -> Html {
 
         let onclick = {
             let selected_item = selected_item.clone();
-            Callback::from(move |_| selected_item.set(index))
+            let route = item.route.clone();
+            Callback::from(move |_| {
+                selected_item.set(index);
+                navigator.push(&route.to_owned());
+            })
         };
 
         html! {
-            <li {onclick} class={class_name}>{ item }</li>
+            <li {onclick} class={class_name}>{ item.label }</li>
         }
     });
 

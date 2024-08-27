@@ -16,7 +16,7 @@ module.exports = {
         transparent: "transparent",
 
         primary: "#2C41FF",
-        secondary: "#514263",
+        secondary: "#1A151B",
         thirdly: "#D8DECB",
         danger: "#EA1D25",
         success: "#29A36E",
@@ -29,10 +29,10 @@ module.exports = {
         "paper-primary": "#D6DAFF",
         "paper-secondary": "#EAE7EF",
         "paper-danger": "#FCDADB",
-        
+
         "paper-success": "#DEF7EC",
         "washed-out-primary": "#808CFF",
-        "washed-out-secondary": "#BEB2CC",
+        "washed-out-secondary": "#9B8BAA",
         "washed-out-thirdly": "#C5CDB1",
         "washed-out-danger": "#F48A8E",
         "washed-out-success": "#99E6C4",

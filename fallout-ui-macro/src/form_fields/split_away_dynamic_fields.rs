@@ -17,9 +17,7 @@ pub fn split_away_dynamic_fields(
                 return None;
             };
 
-            let Some(segment) = path.segments.first() else {
-                return None;
-            };
+            let segment = path.segments.first()?;
 
             if segment.ident.to_string() != "BTreeMap".to_string() {
                 return None;

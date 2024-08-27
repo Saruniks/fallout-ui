@@ -8,21 +8,32 @@ pub struct Props<T: Routable + 'static> {
     pub to: Option<T>,
     #[prop_or_default]
     pub children: Children,
+    #[prop_or_default]
+    pub is_selected: bool,
 }
 
 #[function_component]
 pub fn Breadcrumb<T: Routable + 'static>(props: &Props<T>) -> Html {
-    let Props { children, to } = props.clone();
+    let Props {
+        children,
+        to,
+        is_selected,
+    } = props.clone();
 
     let class = classes!(
         "font-sans",
         "m-0",
         "text-sm",
-        "text-washed-out-secondary",
         "capitalize",
         to.is_some()
             .then_some(classes!("hover:underline", "hover:text-secondary"))
     );
+
+    let class = if is_selected {
+        classes!("text-secondary", class)
+    } else {
+        classes!("text-washed-out-secondary", class)
+    };
 
     html! {
         if let Some(to) = to {

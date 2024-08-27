@@ -10,7 +10,7 @@ pub struct FooterProps {
 
 #[function_component(Footer)]
 pub fn footer(props: &FooterProps) -> Html {
-    let FooterProps { children, class } = props.clone();
+    let FooterProps { children, class } = props;
 
     html! {
         <div class={classes!("text-center", "p-4", "bg-gray-800", "text-white", "shadow-inner", class)}>
