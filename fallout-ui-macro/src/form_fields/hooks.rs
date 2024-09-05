@@ -156,7 +156,7 @@ pub fn hooks_quote(
                 ).as_ref().clone();
             )*
 
-            let FieldsControlProps = #FieldsControlProps {
+            let field_control_props = #FieldsControlProps {
                 #(
                     #static_field_ident,
                 )*
@@ -165,7 +165,7 @@ pub fn hooks_quote(
                 )*
             };
 
-            (form_handle, FieldsControlProps)
+            (form_handle, field_control_props)
         }
     })
 }
