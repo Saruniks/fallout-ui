@@ -10,6 +10,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'pre': {
+              border: 'none',
+              padding: '0',
+              backgroundColor: 'transparent',
+            },
+            'code': {
+              border: 'none',
+              padding: '0',
+              backgroundColor: 'transparent',
+            },
+          },
+        },
+      },
       colors: {
         black: "#231f20",
         white: "#ffffff",

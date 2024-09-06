@@ -1,5 +1,14 @@
-use pulldown_cmark::{html::push_html, Parser};
+use gloo::utils::window;
+use pulldown_cmark::{html::push_html, Options, Parser};
+use wasm_bindgen::prelude::wasm_bindgen;
+use web_sys::Element;
 use yew::{prelude::*, virtual_dom::VNode};
+
+#[wasm_bindgen]
+extern "C" {
+    #[wasm_bindgen(js_namespace = hljs, js_name = highlightElement)]
+    fn highlight_element(element: &Element);
+}
 
 #[derive(Clone, PartialEq, Properties)]
 pub struct Props {
@@ -18,7 +27,7 @@ pub fn Markdown(props: &Props) -> Html {
         color_class,
     } = props.clone();
 
-    let class = classes!(color_class, class);
+    let class = classes!("prose", color_class, class);
 
     let markdown_content: String = children
         .iter()
@@ -31,7 +40,18 @@ pub fn Markdown(props: &Props) -> Html {
         })
         .collect();
 
-    // Convert Markdown to HTML using pulldown-cmark
+    use_effect_with((), move |_| {
+        if let Some(document) = window().document() {
+            let code_elements = document.get_elements_by_tag_name("code");
+            for i in 0..code_elements.length() {
+                if let Some(element) = code_elements.item(i) {
+                    highlight_element(&element);
+                }
+            }
+        }
+        || {}
+    });
+
     let parser = Parser::new(&markdown_content);
     let mut html_output = String::new();
     push_html(&mut html_output, parser);

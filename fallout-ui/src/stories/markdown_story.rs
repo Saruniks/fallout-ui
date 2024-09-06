@@ -1,6 +1,7 @@
 use yew::prelude::*;
 
 use crate::components::{
+    callouts::callout_info::CalloutInfo,
     stories::Stories,
     story::{Story, StoryBackground},
     typography::markdown::Markdown,
@@ -31,13 +32,15 @@ fn main() {
 }"###;
 
     html! {
-        <Stories>
-            <Story name={"Markdown"} background={StoryBackground::Light}>
-                <Markdown>{markdown}</Markdown>
-            </Story>
-            <Story name={"Markdown Tailwind CSS Typography"} background={StoryBackground::Light}>
-                <Markdown class="prose">{markdown}</Markdown>
-            </Story>
-        </Stories>
+        <>
+            <CalloutInfo class="mb-4">
+                {"Markdown Component is intended to be used with Highlight.js and Tailwind CSS Typography"}
+            </CalloutInfo>
+            <Stories>
+                <Story name={"Markdown Tailwind CSS Typography"} background={StoryBackground::Light}>
+                    <Markdown>{markdown}</Markdown>
+                </Story>
+            </Stories>
+        </>
     }
 }
