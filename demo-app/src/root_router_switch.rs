@@ -22,6 +22,7 @@ use fallout_ui::stories::forms_and_inputs_mental_model_story::FormsAndInputsMent
 use fallout_ui::stories::grid_story::GridStory;
 use fallout_ui::stories::layout_story::LayoutStory;
 use fallout_ui::stories::link_story::LinkStory;
+use fallout_ui::stories::markdown_story::MarkdownStory;
 use fallout_ui::stories::modal_story::ModalStory;
 use fallout_ui::stories::multiple_words_input_story::MultipleWordsInputStory;
 use fallout_ui::stories::table_story::TableStory;
@@ -66,7 +67,7 @@ pub fn RouterSwitch() -> Html {
         Card => html! {<CardStory />},
         Grid => html! {<GridStory />},
         Layout => html! {<LayoutStory />},
+        Markdown => html! {<MarkdownStory />},
     };
     html! {<StoryPage key={route.to_string()}>{story}</StoryPage>}
-
 }

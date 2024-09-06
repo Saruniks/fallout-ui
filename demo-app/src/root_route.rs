@@ -92,6 +92,9 @@ pub enum Route {
 
     #[at("/layout")]
     Layout,
+
+    #[at("/markdown")]
+    Markdown,
 }
 
 impl ImplicitClone for Route {}

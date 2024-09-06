@@ -28,6 +28,7 @@ velcro = { workspace = true }
 validator = { workspace = true, features = ["derive", "phone"] }
 wasm-bindgen = { workspace = true, features = ["std"] }
 wasm-bindgen-futures = { workspace = true }
+pulldown-cmark = { workspace = true }
 web-sys = { workspace = true, features = [
     "Blob",
     "console",
