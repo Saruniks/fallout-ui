@@ -45,4 +45,4 @@ web-sys = "0.3.64"
 yew = "0.21.0"
 yew-router = "0.18.0"
 yew_heroicons = { git = "https://github.com/voidpumpkin/clone_of_yew_heroicons.git", rev = "aaed79d6ec03eac61da770eb3d990838e39b1138" }
-pulldown-cmark = "0.9"
+pulldown-cmark = "0.12.1"

@@ -26,7 +26,9 @@ This is a **Markdown** example rendered in a Yew app.
 
 This is a paragraph with *italic* and **bold** text.
 
-```rust
+`inline code`
+
+```rust 
 fn main() {
     println!(\"Hello, Yew!\");
 }"###;

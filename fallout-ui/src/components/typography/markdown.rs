@@ -42,10 +42,15 @@ pub fn Markdown(props: &Props) -> Html {
 
     use_effect_with((), move |_| {
         if let Some(document) = window().document() {
-            let code_elements = document.get_elements_by_tag_name("code");
-            for i in 0..code_elements.length() {
-                if let Some(element) = code_elements.item(i) {
-                    highlight_element(&element);
+            let pre_elements = document.get_elements_by_tag_name("pre");
+            for i in 0..pre_elements.length() {
+                if let Some(pre_element) = pre_elements.item(i) {
+                    let code_elements = pre_element.get_elements_by_tag_name("code");
+                    if code_elements.length() > 0 {
+                        if let Some(code_element) = code_elements.item(0) {
+                            highlight_element(&code_element);
+                        }
+                    }
                 }
             }
         }
