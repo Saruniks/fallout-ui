@@ -13,7 +13,7 @@ pub fn footer(props: &FooterProps) -> Html {
     let FooterProps { children, class } = props;
 
     html! {
-        <div class={classes!("text-center", "p-4", "bg-gray-800", "text-white", "shadow-inner", class)}>
+        <div class={classes!("text-center", "p-4", "text-white", "shadow-inner", class)}>
             { children }
         </div>
     }
