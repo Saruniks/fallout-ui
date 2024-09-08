@@ -18,7 +18,7 @@ pub fn avatar(props: &AvatarProps) -> Html {
             <div
                 class={classes!(
                     "w-10", "h-10", "rounded-full", "flex", "items-center", "justify-center", "bg-gray-200", "text-gray-700", "font-bold", "cursor-pointer", "hover:shadow-lg", "transition-shadow", "duration-200",
-                    props.classes.clone() // Add additional classes
+                    props.class.clone()
                 )}
                 {onclick}
             >
