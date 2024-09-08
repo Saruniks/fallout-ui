@@ -1,3 +1,4 @@
+pub mod avatar;
 pub mod breadcrumb_placeholder;
 pub mod breadcrumbs_divider;
 pub mod buttons;

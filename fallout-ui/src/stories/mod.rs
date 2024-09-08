@@ -26,3 +26,4 @@ pub mod card_story;
 pub mod grid_story;
 pub mod layout_story;
 pub mod markdown_story;
+pub mod avatar_story;

@@ -2,6 +2,7 @@ use crate::root_page::RootPage;
 use crate::root_route::Route;
 use crate::story_page::StoryPage;
 use fallout_ui::stories::accordion_table_story::AccordionTableStory;
+use fallout_ui::stories::avatar_story::AvatarStory;
 use fallout_ui::stories::base_checkbox_set_story::BaseCheckboxSetStory;
 use fallout_ui::stories::base_checkbox_story::BaseCheckboxStory;
 use fallout_ui::stories::base_code_area_story::BaseCodeAreaStory;
@@ -68,6 +69,7 @@ pub fn RouterSwitch() -> Html {
         Grid => html! {<GridStory />},
         Layout => html! {<LayoutStory />},
         Markdown => html! {<MarkdownStory />},
+        Avatar => html! {<AvatarStory />},
     };
     html! {<StoryPage key={route.to_string()}>{story}</StoryPage>}
 }

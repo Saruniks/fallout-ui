@@ -95,6 +95,9 @@ pub enum Route {
 
     #[at("/markdown")]
     Markdown,
+
+    #[at("/avatar")]
+    Avatar,
 }
 
 impl ImplicitClone for Route {}
@@ -142,7 +145,8 @@ impl Route {
             | Route::Table
             | Route::CodeBlock
             | Route::AccordionTable
-            | Route::Card => StoryGroup::DataDisplay,
+            | Route::Card
+            | Route::Avatar => StoryGroup::DataDisplay,
             Route::Grid | Route::Layout => StoryGroup::Layout,
             _ => StoryGroup::NotGrouped,
         }
