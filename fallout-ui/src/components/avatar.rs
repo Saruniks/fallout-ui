@@ -6,7 +6,7 @@ pub struct AvatarProps {
     #[prop_or_default]
     pub onclick: Option<Callback<MouseEvent>>,
     #[prop_or_default]
-    pub classes: Classes,
+    pub class: Classes,
 }
 
 #[function_component(Avatar)]
