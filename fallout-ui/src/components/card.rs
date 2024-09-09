@@ -3,6 +3,7 @@ use yew::prelude::*;
 #[derive(Clone, PartialEq, Properties)]
 pub struct Props {
     pub children: Children,
+    #[prop_or_default]
     pub image: Option<String>,
     #[prop_or_default]
     pub class: Classes,
