@@ -32,9 +32,9 @@ pub fn Card(props: &Props) -> Html {
     html! {
         <div {onclick} class={classes!("max-w-sm", "rounded", "overflow-hidden", "border", "border-slate-300", "bg-white", class)}>
             if let Some(image) = image {
-                <img class="w-full bg-gray-200" src={image} alt={"image"} />
+                <img class="w-full bg-gray-200 border-b border-slate-300" src={image} alt={"image"} />
             }
-            <div class="border-t border-slate-300 px-4 py-4">
+            <div class="px-4 py-4">
                 {children}
             </div>
         </div>
