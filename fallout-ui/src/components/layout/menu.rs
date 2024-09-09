@@ -1,13 +1,13 @@
 use clone_on_capture::clone_on_capture;
 use yew::prelude::*;
-use yew_router::{hooks::use_navigator, navigator, Routable};
+use yew_router::{hooks::use_navigator, Routable};
 
 #[derive(Properties, PartialEq)]
 pub struct MenuProps<T: Routable + 'static> {
     #[prop_or_default]
     pub class: Classes,
     pub items: Vec<MenuItem<T>>,
-    pub default_selected: usize,
+    pub default_selected: Option<usize>,
     pub mode: MenuMode,
 }
 
@@ -38,7 +38,7 @@ pub fn Menu<T: Routable + 'static>(props: &MenuProps<T>) -> Html {
     }
 
     let items = props.items.iter().enumerate().map(|(index, item)| {
-        let is_selected = *selected_item == index;
+        let is_selected = *selected_item == Some(index);
         let class_name = if is_selected {
             "text-white px-3 py-2 rounded-md bg-blue-700 cursor-pointer"
         } else {
@@ -49,7 +49,7 @@ pub fn Menu<T: Routable + 'static>(props: &MenuProps<T>) -> Html {
             let selected_item = selected_item.clone();
             let route = item.route.clone();
             Callback::from(move |_| {
-                selected_item.set(index);
+                selected_item.set(Some(index));
                 navigator.push(&route.to_owned());
             })
         };
