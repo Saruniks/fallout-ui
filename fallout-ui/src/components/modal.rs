@@ -6,6 +6,7 @@ use web_sys::KeyboardEvent;
 use yew::prelude::*;
 use yew_heroicons::size_24::solid::XMarkIcon;
 
+use crate::components::buttons::danger_button::DangerButton;
 use crate::components::buttons::outlined_secondary_button::OutlinedSecondaryButton;
 use crate::components::buttons::primary_button::PrimaryButton;
 use crate::components::typography::header::Header;
@@ -13,6 +14,13 @@ use crate::hooks::use_fallout_context;
 use crate::utils::modal_tracking_context::ModalTrackingContext;
 use crate::utils::toasts::notify_err;
 use crate::utils::web_error::web_err_logic;
+
+#[derive(Clone, PartialEq)]
+pub enum ConfirmButtonType {
+    Primary,
+    Secondary,
+    Danger,
+}
 
 #[derive(Clone, PartialEq, Properties)]
 pub struct Props {
@@ -24,6 +32,8 @@ pub struct Props {
     pub title: String,
     #[prop_or("Confirm".to_string())]
     pub confirm_cta: String,
+    #[prop_or(ConfirmButtonType::Primary)]
+    pub confirm_bytton_type: ConfirmButtonType,
     #[prop_or_default]
     pub close_cta: Option<String>,
     // Control props
@@ -54,6 +64,7 @@ pub fn Modal(props: &Props) -> Html {
         loading,
         disabled,
         close_cta,
+        confirm_bytton_type,
     } = props.clone();
 
     let modal_context_id = use_mut_ref(|| 0);
@@ -153,15 +164,47 @@ pub fn Modal(props: &Props) -> Html {
                     </div>
                     <div class="mx-9 mt-9 flex gap-3">
                         if let Some(on_confirm) = on_confirm {
-                            <PrimaryButton
-                                onclick={on_confirm.reform(|_| {})}
-                                data_qa={format!("{data_qa}-modal-confirm")}
-                                {form}
-                                {disabled}
-                                {loading}
-                            >
-                                {confirm_cta}
-                            </PrimaryButton>
+                            {
+                                match confirm_bytton_type {
+                                    ConfirmButtonType::Primary => {
+                                        html! {
+                                            <PrimaryButton
+                                                onclick={on_confirm.reform(|_| {})}
+                                                data_qa={format!("{data_qa}-modal-confirm")}
+                                                {form}
+                                                {disabled}
+                                                {loading}
+                                            >
+                                                {confirm_cta}
+                                            </PrimaryButton>
+                                        }
+                                    },
+                                    ConfirmButtonType::Secondary => {
+                                        html! {
+                                            <OutlinedSecondaryButton
+                                                onclick={on_confirm.reform(|_| {})}
+                                                data_qa={format!("{data_qa}-modal-confirm")}
+                                                {disabled}
+                                                {loading}
+                                            >
+                                                {confirm_cta}
+                                            </OutlinedSecondaryButton>
+                                        }
+                                    },
+                                    ConfirmButtonType::Danger => {
+                                        html! {
+                                            <DangerButton
+                                                onclick={on_confirm.reform(|_| {})}
+                                                data_qa={format!("{data_qa}-modal-confirm")}
+                                                {disabled}
+                                                {loading}
+                                            >
+                                                {confirm_cta}
+                                            </DangerButton>
+                                        }
+                                    },
+                                }
+                            }
                         }
                         <OutlinedSecondaryButton
                             onclick={on_close.reform(|_| {})}

@@ -1,5 +1,5 @@
 use gloo::utils::window;
-use pulldown_cmark::{html::push_html, Options, Parser};
+use pulldown_cmark::{html::push_html, Parser};
 use wasm_bindgen::prelude::wasm_bindgen;
 use web_sys::Element;
 use yew::{prelude::*, virtual_dom::VNode};

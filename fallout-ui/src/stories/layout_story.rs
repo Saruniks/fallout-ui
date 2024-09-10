@@ -24,6 +24,7 @@ pub enum DummyRoute {
     #[at("/layout")]
     Nav2,
 
+    #[allow(unreachable_patterns)]
     #[at("/layout")]
     Nav3,
 }
