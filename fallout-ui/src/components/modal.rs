@@ -153,7 +153,7 @@ pub fn Modal(props: &Props) -> Html {
                 <div class="z-modal bg-white relative h-fit min-w-[50vw]" data-qa={format!("{data_qa}-modal")}>
                     <button
                         onclick={on_close.reform(|_| {})}
-                        class="w-10 h-10 p-0 border-1 border-solid border-washed-out-thirdly hover:border-thirdly rounded-full absolute right-3 top-3 bg-transparent cursor-pointer"
+                        class="flex items-center justify-center w-10 h-10 p-0 border-1 border-solid border-washed-out-thirdly hover:border-thirdly rounded-full absolute right-3 top-3 bg-transparent cursor-pointer"
                         data_qa={format!("{data_qa}-modal-close")}
                     >
                         <XMarkIcon class="w-6 text-secondary" />
