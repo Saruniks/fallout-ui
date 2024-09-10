@@ -33,7 +33,7 @@ pub struct Props {
     #[prop_or("Confirm".to_string())]
     pub confirm_cta: String,
     #[prop_or(ConfirmButtonType::Primary)]
-    pub confirm_bytton_type: ConfirmButtonType,
+    pub confirm_button_type: ConfirmButtonType,
     #[prop_or_default]
     pub close_cta: Option<String>,
     // Control props
@@ -64,7 +64,7 @@ pub fn Modal(props: &Props) -> Html {
         loading,
         disabled,
         close_cta,
-        confirm_bytton_type,
+        confirm_button_type,
     } = props.clone();
 
     let modal_context_id = use_mut_ref(|| 0);
@@ -165,7 +165,7 @@ pub fn Modal(props: &Props) -> Html {
                     <div class="mx-9 mt-9 flex gap-3">
                         if let Some(on_confirm) = on_confirm {
                             {
-                                match confirm_bytton_type {
+                                match confirm_button_type {
                                     ConfirmButtonType::Primary => {
                                         html! {
                                             <PrimaryButton
