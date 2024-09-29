@@ -16,14 +16,20 @@ pub fn layout(props: &LayoutProps) -> Html {
     if let Some(sider) = &props.sider {
         // Layout with Sider
         let class = if props.no_min_height {
-            classes!("flex", props.class.clone())
+            classes!("flex", "flex-col", "md:flex-row", props.class.clone())
         } else {
-            classes!("flex", "min-h-screen", props.class.clone())
+            classes!(
+                "flex",
+                "flex-col",
+                "md:flex-row",
+                "min-h-screen",
+                props.class.clone()
+            )
         };
 
         html! {
             <div {class}>
-                <div class="w-64">
+                <div class="w-full w-64">
                     { sider.clone() }
                 </div>
                 <div class="flex-1 flex flex-col bg-gray-100">

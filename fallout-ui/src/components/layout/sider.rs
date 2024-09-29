@@ -10,7 +10,7 @@ pub struct SiderProps {
 #[function_component(Sider)]
 pub fn sider(props: &SiderProps) -> Html {
     html! {
-        <div class={classes!("bg-gray-800", "w-64", "py-2", "px-4", "h-full", props.class.clone())}>
+        <div class={classes!("bg-gray-800", "w-full", "md:w-64", "py-2", "px-4", "h-full", props.class.clone())}>
             { props.children.clone() }
         </div>
     }

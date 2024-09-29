@@ -61,7 +61,7 @@ pub fn Menu<T: Routable + 'static>(props: &MenuProps<T>) -> Html {
 
     let container_class = match props.mode {
         MenuMode::Inline => "flex-1 min-w-0 flex flex-col space-y-2", // Vertical (inline) layout
-        MenuMode::Horizontal => "flex-1 min-w-0 flex space-x-4",      // Horizontal layout
+        MenuMode::Horizontal => "flex-1 min-w-0 flex flox-col md:flex-row space-y-2 space-x-4",      // Horizontal layout
     };
 
     html! {
