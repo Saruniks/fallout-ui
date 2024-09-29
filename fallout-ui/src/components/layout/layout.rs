@@ -29,7 +29,7 @@ pub fn layout(props: &LayoutProps) -> Html {
 
         html! {
             <div {class}>
-                <div class="w-full w-64">
+                <div class="w-full md:w-64 flex-shrink-0">
                     { sider.clone() }
                 </div>
                 <div class="flex-1 flex flex-col bg-gray-100">
