@@ -19,7 +19,7 @@ pub struct MenuItem<T: Routable + 'static> {
     pub route: T,
 }
 
-#[derive(PartialEq)]
+#[derive(PartialEq, Clone)]
 pub enum MenuMode {
     Inline,
     Horizontal,
