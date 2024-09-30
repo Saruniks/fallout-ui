@@ -126,14 +126,15 @@ pub fn Modal(props: &Props) -> Html {
 
     let container_class = classes!(
         "w-screen",
-        "h-screen",
+        "h-screen", // Ensure full height of the screen
         "fixed",
         "top-0",
         "left-0",
         "flex",
-        "justify-center",
-        "p-4",     // Adjusted for smaller screens, you can increase this on larger screens
-        "md:p-24", // Medium and above screen sizes get more padding
+        "items-center",   // Center vertically
+        "justify-center", // Center horizontally
+        "p-4",            // Padding for smaller screens
+        "md:p-24",        // Larger padding for bigger screens
         "box-border",
         "overflow-auto",
         "before:z-modal-bg",
@@ -148,10 +149,26 @@ pub fn Modal(props: &Props) -> Html {
         (!show).then_some("hidden")
     );
 
+    let modal_class = classes!(
+        "z-modal",
+        "bg-white",
+        "relative",
+        "h-fit",
+        "w-[90vw]",           // For small screens, the modal takes 90% of the screen width
+        "sm:w-[80vw]",        // Small screens (above mobile) get 80% width
+        "md:w-[60vw]",        // Medium screens and above get 60% width
+        "lg:w-[40vw]",        // Large screens can have 40% width
+        "max-w-[600px]",      // Cap the max width to 600px to avoid it getting too large
+        "shadow-lg",          // Optionally add shadow for better visual separation
+        "rounded-lg",         // Add some border-radius for a cleaner look on smaller screens
+        "transform",          // Add transform for Y translation
+        "translate-y-[-50%]", // Move the modal slightly higher (adjust this percentage as needed)
+    );
+
     create_portal(
         html! {
-            <div class={container_class} >
-                <div class="z-modal bg-white relative h-fit min-w-[50vw]" data-qa={format!("{data_qa}-modal")}>
+            <div class={container_class}>
+                <div class={modal_class} data-qa={format!("{data_qa}-modal")}>
                     <button
                         onclick={on_close.reform(|_| {})}
                         class="flex items-center justify-center w-10 h-10 p-0 border-1 border-solid border-washed-out-thirdly hover:border-thirdly rounded-full absolute right-3 top-3 bg-transparent cursor-pointer"
@@ -159,11 +176,11 @@ pub fn Modal(props: &Props) -> Html {
                     >
                         <XMarkIcon class="w-6 text-secondary" />
                     </button>
-                    <Header class="!m-4 md:!m-9 pr-5 text-lg md:text-xl">{title}</Header>
-                    <div class="px-4 md:px-9 box-border text-sm md:text-base">
+                    <Header class="!m-9 pr-5">{title}</Header>
+                    <div class="px-9 box-border">
                         {children}
                     </div>
-                    <div class="mx-9 mt-9 flex flex-wrap gap-3">
+                    <div class="mx-9 mt-9 flex gap-3">
                         if let Some(on_confirm) = on_confirm {
                             {
                                 match confirm_button_type {
@@ -215,7 +232,7 @@ pub fn Modal(props: &Props) -> Html {
                         </OutlinedSecondaryButton>
                     </div>
                     <div class="relative w-full h-10">
-                        <svg class="absolute right-0 bottom-0 w-full h-10 md:w-auto" viewBox="0 0 243 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="absolute right-0 bottom-0 h-10" viewBox="0 0 243 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class="fill-primary" d="M0 44L243 0V42C243 43.1046 242.105 44 241 44H0Z"/>
                         </svg>
                     </div>
