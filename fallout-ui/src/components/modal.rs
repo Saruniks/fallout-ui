@@ -131,10 +131,7 @@ pub fn Modal(props: &Props) -> Html {
         "top-0",
         "left-0",
         "flex",
-        "items-start",    // Aligns items at the start of the flex container
-        "justify-center", // Still keep the modal horizontally centered
-        "pt-10",          // Add top padding for small screens
-        "md:pt-16",       // Add more top padding for medium and larger screens
+        "justify-center", // Horizontally center the modal
         "p-4",            // Padding for smaller screens
         "md:p-24",        // Larger padding for bigger screens
         "box-border",
@@ -154,7 +151,12 @@ pub fn Modal(props: &Props) -> Html {
     let modal_class = classes!(
         "z-modal",
         "bg-white",
-        "relative",
+        "absolute",      // Make the modal absolutely positioned
+        "top-[20vh]",    // Position the modal in the top third of the screen (adjustable)
+        "md:top-[10vh]", // For medium and larger screens, place it slightly lower
+        "left-1/2",      // Horizontally center by setting left to 50%
+        "transform",
+        "translate-x-[-50%]", // Shift it back to truly center horizontally
         "h-fit",
         "w-[90vw]",      // For small screens, the modal takes 90% of the screen width
         "sm:w-[80vw]",   // Small screens (above mobile) get 80% width
