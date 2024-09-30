@@ -131,8 +131,10 @@ pub fn Modal(props: &Props) -> Html {
         "top-0",
         "left-0",
         "flex",
-        "items-center",   // Center vertically
-        "justify-center", // Center horizontally
+        "items-start",    // Aligns items at the start of the flex container
+        "justify-center", // Still keep the modal horizontally centered
+        "pt-10",          // Add top padding for small screens
+        "md:pt-16",       // Add more top padding for medium and larger screens
         "p-4",            // Padding for smaller screens
         "md:p-24",        // Larger padding for bigger screens
         "box-border",
