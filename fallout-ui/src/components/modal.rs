@@ -132,7 +132,8 @@ pub fn Modal(props: &Props) -> Html {
         "left-0",
         "flex",
         "justify-center",
-        "p-24",
+        "p-4",     // Adjusted for smaller screens, you can increase this on larger screens
+        "md:p-24", // Medium and above screen sizes get more padding
         "box-border",
         "overflow-auto",
         "before:z-modal-bg",
@@ -158,11 +159,11 @@ pub fn Modal(props: &Props) -> Html {
                     >
                         <XMarkIcon class="w-6 text-secondary" />
                     </button>
-                    <Header class="!m-9 pr-5">{title}</Header>
-                    <div class="px-9 box-border">
+                    <Header class="!m-4 md:!m-9 pr-5 text-lg md:text-xl">{title}</Header>
+                    <div class="px-4 md:px-9 box-border text-sm md:text-base">
                         {children}
                     </div>
-                    <div class="mx-9 mt-9 flex gap-3">
+                    <div class="mx-9 mt-9 flex flex-wrap gap-3">
                         if let Some(on_confirm) = on_confirm {
                             {
                                 match confirm_button_type {
@@ -214,7 +215,7 @@ pub fn Modal(props: &Props) -> Html {
                         </OutlinedSecondaryButton>
                     </div>
                     <div class="relative w-full h-10">
-                        <svg class="absolute right-0 bottom-0 w-auto h-10" viewBox="0 0 243 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="absolute right-0 bottom-0 w-full h-10 md:w-auto" viewBox="0 0 243 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path class="fill-primary" d="M0 44L243 0V42C243 43.1046 242.105 44 241 44H0Z"/>
                         </svg>
                     </div>
