@@ -154,15 +154,13 @@ pub fn Modal(props: &Props) -> Html {
         "bg-white",
         "relative",
         "h-fit",
-        "w-[90vw]",           // For small screens, the modal takes 90% of the screen width
-        "sm:w-[80vw]",        // Small screens (above mobile) get 80% width
-        "md:w-[60vw]",        // Medium screens and above get 60% width
-        "lg:w-[40vw]",        // Large screens can have 40% width
-        "max-w-[600px]",      // Cap the max width to 600px to avoid it getting too large
-        "shadow-lg",          // Optionally add shadow for better visual separation
-        "rounded-lg",         // Add some border-radius for a cleaner look on smaller screens
-        "transform",          // Add transform for Y translation
-        "translate-y-[-50%]", // Move the modal slightly higher (adjust this percentage as needed)
+        "w-[90vw]",      // For small screens, the modal takes 90% of the screen width
+        "sm:w-[80vw]",   // Small screens (above mobile) get 80% width
+        "md:w-[60vw]",   // Medium screens and above get 60% width
+        "lg:w-[40vw]",   // Large screens can have 40% width
+        "max-w-[600px]", // Cap the max width to 600px to avoid it getting too large
+        "shadow-lg",     // Optionally add shadow for better visual separation
+        "rounded-lg",    // Add some border-radius for a cleaner look on smaller screens
     );
 
     create_portal(
